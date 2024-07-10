@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background Image Swap</title>
+    <style>
+        body {
+            background-image: url('image1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const imageSources = [
+           'OIP (2).jpg','eagle.jpg','eagle2.jpg','f.webp','green.jpg','OIP (1).jpg','lion.jpg','nature.jpg','472612-peaceful-desktop-wallpaper-1920x1200-large-resolution.jpg','wp5636774.webp','OIP (2),.'];
+
+        function changeBackgroundImage() {
+            const randomIndex = Math.floor(Math.random() * imageSources.length);
+            document.body.style.backgroundImage = `url(${imageSources[randomIndex]})`;
+        }
+
+        // Change the background image every 5 seconds (1000 milliseconds)
+        setInterval(changeBackgroundImage, 1000);
+    </script>
+</body>
+</html>
